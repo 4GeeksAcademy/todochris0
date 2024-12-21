@@ -1,13 +1,15 @@
-//import react into the bundle
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-// include your styles into the webpack bundle
-import "../styles/index.css";
+import App from "./App";
 
-//import your own components
-import Home from "./component/home.jsx";
+const rootElement = document.getElementById("app"); // Fixed typo
+const root = createRoot(rootElement);
 
-//render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<Home/>);
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+
 
